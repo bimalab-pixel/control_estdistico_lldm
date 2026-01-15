@@ -1,19 +1,41 @@
-const CACHE_NAME = 'control-lldm-v1';
+const CACHE_NAME = 'sistema-lldm-v1';
+
+// Lista de todos los archivos que deben funcionar sin internet
 const ASSETS = [
+  './',
   './index.html',
-  './manifest.json'
+  './CENSOLLDM.html',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png'
 ];
 
-// Instalación y almacenamiento en caché
+// Instalación: Guarda los archivos en la memoria del celular
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+    caches.open(CACHE_NAME).then(cache => {
+      console.log('Cacheando archivos del sistema...');
+      return cache.addAll(ASSETS);
+    })
   );
 });
 
-// Estrategia: Carga desde caché y actualiza si hay red
+// Activación: Borra versiones viejas de la app si haces cambios
+self.addEventListener('activate', e => {
+  e.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+      );
+    })
+  );
+});
+
+// Estrategia de carga: Carga rápido desde memoria, pero actualiza si hay red
 self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then(response => response || fetch(e.request))
+    caches.match(e.request).then(response => {
+      return response || fetch(e.request);
+    })
   );
 });

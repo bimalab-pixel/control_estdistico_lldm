@@ -1,7 +1,7 @@
 {
-  "name": "Control LLDM - Cloud V7",
-  "short_name": "ControlLLDM",
-  "description": "Sistema de gestión y control de asistencia - Cloud V7",
+  "name": "Sistema LLDM - Control y Censo",
+  "short_name": "SistemaLLDM",
+  "description": "Gestión de Asistencia y Censo General LLDM",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f6f7",
@@ -18,7 +18,13 @@
       "type": "image/png",
       "sizes": "512x512"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Abrir Censo",
+      "short_name": "Censo",
+      "url": "./CENSOLLDM.html",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    }
   ]
-
 }
-

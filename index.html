@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Control LLDM - Cloud V7</title>
 	
 	<link rel="manifest" href="manifest.json">
@@ -663,16 +663,17 @@ header p {
             
 
             <button class="dash-card c-avg" onclick="showAverages()"><i>📅</i><span>Promedios</span></button>
-
-            <button class="dash-card c-cloud" onclick="uploadData()"><i>☁️</i><span>SUBIR</span></button>
-            <button class="dash-card c-cloud" onclick="downloadData()"><i>⬇️</i><span>BAJAR</span></button>
-            <button class="dash-card" style="background: linear-gradient(to bottom, #ffffff, #fff0f0); border-bottom: 5px solid #c0392b;" onclick="showCensus()">
+			<button class="dash-card" style="background: linear-gradient(to bottom, #ffffff, #fff0f0); border-bottom: 5px solid #c0392b;" onclick="showCensus()">
         <i>📋</i><span>Reporte / Supervisión</span>
     </button>
 	<div class="dash-card c-stats" onclick="generarReporteSemestral()">
     <i>📈</i>
     <span>Reporte Semestral</span>
 </div>
+
+            <button class="dash-card c-cloud" onclick="uploadData()"><i>☁️</i><span>SUBIR</span></button>
+            <button class="dash-card c-cloud" onclick="downloadData()"><i>⬇️</i><span>BAJAR</span></button>
+            
     <button class="dash-card" style="background: linear-gradient(to bottom, #ffffff, #f1f2f6); border-bottom: 5px solid #7f8c8d;" onclick="toggleConfig()">
     <i>⚙️</i><span>Configuración</span>
 </button>
