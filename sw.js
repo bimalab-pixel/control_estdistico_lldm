@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sistema-lldm-v2';
+const CACHE_NAME = 'sistema-lldm-v3';
 
 // Lista de todos los archivos que deben funcionar sin internet
 const ASSETS = [
