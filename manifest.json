@@ -1,6 +1,6 @@
 {
-  "name": "Sistema LLDM - Control y Censo",
-  "short_name": "SistemaLLDM",
+  "name": "Lldm Estadística - Control y Censo",
+  "short_name": "Lldm Estadística",
   "description": "Gestión de Asistencia y Censo General LLDM",
   "start_url": "./index.html",
   "display": "standalone",
